@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using Core.Entities.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
@@ -57,15 +58,15 @@ namespace ConsoleUI
             }
         }
 
-        private static void UserAdd()
-        {
-            UserManager userManager = new UserManager(new EfUserDal());
-            userManager.Add(new User { UserId =2, FirstName = "Bülent", LastName = "Sevinç", Email = "sevinc@gmail.com", Password = "456" });
-            foreach (var user in userManager.GetAll().Data)
-            {
-                Console.WriteLine("{0} {1}",user.FirstName,user.LastName);
-            }
-        }
+        //private static void UserAdd()
+        //{
+        //    UserManager userManager = new UserManager(new EfUserDal());
+        //    userManager.Add(new User { UserId =2, FirstName = "Bülent", LastName = "Sevinç", Email = "sevinc@gmail.com", Password = "456" });
+        //    foreach (var user in userManager.GetAll().Data)
+        //    {
+        //        Console.WriteLine("{0} {1}",user.FirstName,user.LastName);
+        //    }
+        //}
 
         private static void GetCarDetails()
         {
