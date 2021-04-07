@@ -21,5 +21,12 @@ namespace Business.Constant
         public static string SuccessfulLogin="Başarılı giriş";
         public static string UserAlreadyExists="Kullanıcı mevcut";
         public static string AccessTokenCreated="Token oluşturuldu";
+        public static string NotExist="Bulunamadı";
+        public static string InvalidFileExtension="Geçersiz dosya uzantısı";
+        public static string ImageNumberLimitExceeded="Resim sayısı limit aşımı";
+        public static string AddSingular="Eklendi";
+        public static string DeleteSingular="Silindi";
+        public static string UpdateSingular="Güncellendi.";
+        public static string CreditCardError="Kredi Kart Bilgileriniz Hatalı";
     }
 }
