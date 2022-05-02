@@ -1,3 +1,6 @@
+using Core.DependencyResolverr;
+using Core.Extensions;
+using Core.Utilities.IoC;
 using Core.Utilities.Security.Encryption;
 using Core.Utilities.Security.JWT;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -33,6 +36,8 @@ namespace WebAPI
 
             services.AddCors();
 
+            /*Burada Web API ye jwt token kullanacaðýmýzý söylüyoruz.
+             Buradan 57. inci satýra kadar.*/
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -50,6 +55,12 @@ namespace WebAPI
                     };
                 });
 
+            /*IServiceCollection a AddDependencyResolvers adýnda bir extensions metod ekledik.
+             Bu metod ile vereceðimiz tüm ICoreModule türünden modülleri burada çalýþtýralým.*/
+            services.AddDependencyResolvers(new ICoreModule[] {
+                new CoreModule()
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,6 +71,10 @@ namespace WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            //Bizim kendi oluþturduðumuz genel hata yakalama middleware i
+            app.ConfigureCustomExceptionMiddleware();
+
+            //http ile baþlayan url den gelen tüm get,post,put,delete isteklerine izin ver demek
             app.UseCors(builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader());
 
             app.UseHttpsRedirection();

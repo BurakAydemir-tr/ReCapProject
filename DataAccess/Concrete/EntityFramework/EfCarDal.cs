@@ -33,8 +33,8 @@ namespace DataAccess.Concrete.EntityFramework
                                  DailyPrice = c.DailyPrice,
                                  ModelYear = c.ModelYear,
                                  Description = c.Description,
-                                 Status = !(context.Rentals.Any(p => p.CarId==c.Id && (p.ReturnDate == null || p.ReturnDate>DateTime.Now)))
-                                 //ImagePath=context.CarImages.Where(p=>p.CarId==c.Id).FirstOrDefault().ImagePath
+                                 Status = !(context.Rentals.Any(p => p.CarId==c.Id && (p.ReturnDate == null || p.ReturnDate>DateTime.Now))),
+                                 ImagePath=context.CarImages.Where(p=>p.CarId==c.Id).FirstOrDefault().ImagePath
                              };
                 return result.ToList();
             }

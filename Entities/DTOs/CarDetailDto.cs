@@ -14,5 +14,6 @@ namespace Entities.DTOs
         public double DailyPrice { get; set; }
         public string Description { get; set; }
         public bool Status { get; set; }
+        public string ImagePath { get; set; }
     }
 }
