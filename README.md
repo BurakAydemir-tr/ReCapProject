@@ -10,17 +10,17 @@ In this project, we created a website for car rental using Asp.net Web API. Buil
 - **WebAPI**: It is the Restful API Layer of the project.
 
 ### Technologies
-o	Restful Web Api Vers. .Net Core 3.1
-o	Multi-Layer Architecture
-o	Interceptor
-o	Cache Aspect
-o	Transaction Aspect
-o	Performance Aspect
-o	Validation Aspect(Fluent Validation)
-o	Authorization
-o	Authentication
-o	Autofac
-o	Json Web Token Managment
-o	Cross Cutting Concerns
-o	SOLID
+-	Restful Web Api Vers. .Net Core 3.1
+-	Multi-Layer Architecture
+-	Interceptor
+-	Cache Aspect
+-	Transaction Aspect
+-	Performance Aspect
+-	Validation Aspect(Fluent Validation)
+-	Authorization
+-	Authentication
+-	Autofac
+-	Json Web Token Managment
+-	Cross Cutting Concerns
+-	SOLID
 
